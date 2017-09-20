@@ -1,0 +1,519 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'three' ]
+2 info using npm@4.0.5
+3 info using node@v6.9.2
+4 verbose config Skipping project config: /Users/lucascassiano/.npmrc. (matches userconfig)
+5 silly loadCurrentTree Starting
+6 silly install loadCurrentTree
+7 silly install readLocalPackageData
+8 silly fetchPackageMetaData three
+9 silly fetchNamedPackageData three
+10 silly mapToRegistry name three
+11 silly mapToRegistry using default registry
+12 silly mapToRegistry registry http://registry.npmjs.org/
+13 silly mapToRegistry data Result {
+13 silly mapToRegistry   raw: 'three',
+13 silly mapToRegistry   scope: null,
+13 silly mapToRegistry   escapedName: 'three',
+13 silly mapToRegistry   name: 'three',
+13 silly mapToRegistry   rawSpec: '',
+13 silly mapToRegistry   spec: 'latest',
+13 silly mapToRegistry   type: 'tag' }
+14 silly mapToRegistry uri http://registry.npmjs.org/three
+15 verbose request uri http://registry.npmjs.org/three
+16 verbose request no auth needed
+17 info attempt registry request try #1 at 6:13:01 PM
+18 verbose request using bearer token for auth
+19 verbose request id a8980b3ba12ff3e1
+20 verbose etag W/"599ade1b-32291"
+21 verbose lastModified Mon, 21 Aug 2017 13:20:27 GMT
+22 http request GET http://registry.npmjs.org/three
+23 http 304 http://registry.npmjs.org/three
+24 verbose headers { server: 'nginx/1.10.1',
+24 verbose headers   'last-modified': 'Mon, 21 Aug 2017 13:20:27 GMT',
+24 verbose headers   etag: '"599ade1b-32291"',
+24 verbose headers   'cache-control': 'max-age=300',
+24 verbose headers   'accept-ranges': 'bytes',
+24 verbose headers   date: 'Tue, 19 Sep 2017 21:13:02 GMT',
+24 verbose headers   via: '1.1 varnish',
+24 verbose headers   connection: 'keep-alive',
+24 verbose headers   'x-served-by': 'cache-gru17131-GRU',
+24 verbose headers   'x-cache': 'MISS',
+24 verbose headers   'x-cache-hits': '0',
+24 verbose headers   'x-timer': 'S1505855582.954264,VS0,VE143',
+24 verbose headers   vary: 'Accept-Encoding, Accept' }
+25 silly get cb [ 304,
+25 silly get   { server: 'nginx/1.10.1',
+25 silly get     'last-modified': 'Mon, 21 Aug 2017 13:20:27 GMT',
+25 silly get     etag: '"599ade1b-32291"',
+25 silly get     'cache-control': 'max-age=300',
+25 silly get     'accept-ranges': 'bytes',
+25 silly get     date: 'Tue, 19 Sep 2017 21:13:02 GMT',
+25 silly get     via: '1.1 varnish',
+25 silly get     connection: 'keep-alive',
+25 silly get     'x-served-by': 'cache-gru17131-GRU',
+25 silly get     'x-cache': 'MISS',
+25 silly get     'x-cache-hits': '0',
+25 silly get     'x-timer': 'S1505855582.954264,VS0,VE143',
+25 silly get     vary: 'Accept-Encoding, Accept' } ]
+26 verbose etag http://registry.npmjs.org/three from cache
+27 verbose get saving three to /Users/lucascassiano/.npm/registry.npmjs.org/three/.cache.json
+28 verbose correctMkdir /Users/lucascassiano/.npm correctMkdir not in flight; initializing
+29 silly install normalizeTree
+30 silly loadCurrentTree Finishing
+31 silly loadIdealTree Starting
+32 silly install loadIdealTree
+33 silly cloneCurrentTree Starting
+34 silly install cloneCurrentTreeToIdealTree
+35 silly cloneCurrentTree Finishing
+36 silly loadShrinkwrap Starting
+37 silly install loadShrinkwrap
+38 silly loadShrinkwrap Finishing
+39 silly loadAllDepsIntoIdealTree Starting
+40 silly install loadAllDepsIntoIdealTree
+41 silly resolveWithNewModule three@0.87.1 checking installable status
+42 silly cache add args [ 'three', null ]
+43 verbose cache add spec three
+44 silly cache add parsed spec Result {
+44 silly cache add   raw: 'three',
+44 silly cache add   scope: null,
+44 silly cache add   escapedName: 'three',
+44 silly cache add   name: 'three',
+44 silly cache add   rawSpec: '',
+44 silly cache add   spec: 'latest',
+44 silly cache add   type: 'tag' }
+45 silly addNamed three@latest
+46 verbose addNamed "latest" is being treated as a dist-tag for three
+47 info addNameTag [ 'three', 'latest' ]
+48 silly mapToRegistry name three
+49 silly mapToRegistry using default registry
+50 silly mapToRegistry registry http://registry.npmjs.org/
+51 silly mapToRegistry data Result {
+51 silly mapToRegistry   raw: 'three',
+51 silly mapToRegistry   scope: null,
+51 silly mapToRegistry   escapedName: 'three',
+51 silly mapToRegistry   name: 'three',
+51 silly mapToRegistry   rawSpec: '',
+51 silly mapToRegistry   spec: 'latest',
+51 silly mapToRegistry   type: 'tag' }
+52 silly mapToRegistry uri http://registry.npmjs.org/three
+53 verbose addNameTag registry:http://registry.npmjs.org/three not in flight; fetching
+54 verbose get http://registry.npmjs.org/three not expired, no request
+55 silly addNameTag next cb for three with tag latest
+56 silly addNamed three@0.87.1
+57 verbose addNamed "0.87.1" is a plain semver version for three
+58 silly mapToRegistry name three
+59 silly mapToRegistry using default registry
+60 silly mapToRegistry registry http://registry.npmjs.org/
+61 silly mapToRegistry data Result {
+61 silly mapToRegistry   raw: 'three',
+61 silly mapToRegistry   scope: null,
+61 silly mapToRegistry   escapedName: 'three',
+61 silly mapToRegistry   name: 'three',
+61 silly mapToRegistry   rawSpec: '',
+61 silly mapToRegistry   spec: 'latest',
+61 silly mapToRegistry   type: 'tag' }
+62 silly mapToRegistry uri http://registry.npmjs.org/three
+63 verbose addRemoteTarball http://registry.npmjs.org/three/-/three-0.87.1.tgz not in flight; adding
+64 verbose addRemoteTarball [ 'http://registry.npmjs.org/three/-/three-0.87.1.tgz',
+64 verbose addRemoteTarball   '466a34edc4543459ced9b9d7d276b65216fe2ba8' ]
+65 info retry fetch attempt 1 at 6:13:02 PM
+66 info attempt registry request try #1 at 6:13:02 PM
+67 http fetch GET http://registry.npmjs.org/three/-/three-0.87.1.tgz
+68 verbose request using bearer token for auth
+69 http fetch 200 http://registry.npmjs.org/three/-/three-0.87.1.tgz
+70 silly fetchAndShaCheck shasum 466a34edc4543459ced9b9d7d276b65216fe2ba8
+71 verbose addTmpTarball /var/folders/sg/jfsrg2612895p0bvjh92cfwc0000gn/T/npm-77399-ba03e229/registry.npmjs.org/three/-/three-0.87.1.tgz not in flight; adding
+72 verbose addTmpTarball already have metadata; skipping unpack for three@0.87.1
+73 verbose correctMkdir /Users/lucascassiano/.npm correctMkdir not in flight; initializing
+74 silly cache afterAdd three@0.87.1
+75 verbose afterAdd /Users/lucascassiano/.npm/three/0.87.1/package/package.json not in flight; writing
+76 verbose correctMkdir /Users/lucascassiano/.npm correctMkdir not in flight; initializing
+77 verbose afterAdd /Users/lucascassiano/.npm/three/0.87.1/package/package.json written
+78 silly loadAllDepsIntoIdealTree Finishing
+79 silly loadIdealTree Finishing
+80 silly currentTree lucascassiano
+80 silly currentTree ├── ansi-regex@2.0.0
+80 silly currentTree ├── ansi-styles@2.2.1
+80 silly currentTree ├── array-find-index@1.0.2
+80 silly currentTree ├── asn1@0.2.3
+80 silly currentTree ├── assert-plus@0.2.0
+80 silly currentTree ├── asynckit@0.4.0
+80 silly currentTree ├── aws-sign2@0.6.0
+80 silly currentTree ├── aws4@1.5.0
+80 silly currentTree ├── balanced-match@0.4.2
+80 silly currentTree ├── bcrypt-pbkdf@1.0.0
+80 silly currentTree ├── boom@2.10.1
+80 silly currentTree ├── brace-expansion@1.1.6
+80 silly currentTree ├── builtin-modules@1.1.1
+80 silly currentTree ├── camelcase-keys@2.1.0
+80 silly currentTree ├── camelcase@2.1.1
+80 silly currentTree ├── caseless@0.11.0
+80 silly currentTree ├── chalk@1.1.3
+80 silly currentTree ├── cli-color@0.2.2
+80 silly currentTree ├── code-point-at@1.1.0
+80 silly currentTree ├── combined-stream@1.0.5
+80 silly currentTree ├── commander@1.1.1
+80 silly currentTree ├── concat-map@0.0.1
+80 silly currentTree ├─┬ concat-stream@1.5.0
+80 silly currentTree │ ├── isarray@1.0.0
+80 silly currentTree │ └── readable-stream@2.0.6
+80 silly currentTree ├── core-util-is@1.0.2
+80 silly currentTree ├── cryptiles@2.0.5
+80 silly currentTree ├── currently-unhandled@0.4.1
+80 silly currentTree ├─┬ dashdash@1.14.1
+80 silly currentTree │ └── assert-plus@1.0.0
+80 silly currentTree ├── debug@2.4.5
+80 silly currentTree ├── decamelize@1.2.0
+80 silly currentTree ├── deep-extend@0.4.1
+80 silly currentTree ├── delayed-stream@1.0.0
+80 silly currentTree ├── ecc-jsbn@0.1.1
+80 silly currentTree ├── electron-download@3.0.1
+80 silly currentTree ├── electron@1.4.12
+80 silly currentTree ├── error-ex@1.3.0
+80 silly currentTree ├── es5-ext@0.9.2
+80 silly currentTree ├── es6-promise@4.0.5
+80 silly currentTree ├── escape-string-regexp@1.0.5
+80 silly currentTree ├── event-emitter@0.2.2
+80 silly currentTree ├── extend@3.0.0
+80 silly currentTree ├─┬ extract-zip@1.5.0
+80 silly currentTree │ └── debug@0.7.4
+80 silly currentTree ├── extsprintf@1.0.2
+80 silly currentTree ├── fd-slicer@1.0.1
+80 silly currentTree ├── find-up@1.1.2
+80 silly currentTree ├── forever-agent@0.6.1
+80 silly currentTree ├── form-data@2.1.2
+80 silly currentTree ├── fs-extra@0.30.0
+80 silly currentTree ├── fs.realpath@1.0.0
+80 silly currentTree ├── generate-function@2.0.0
+80 silly currentTree ├── generate-object-property@1.2.0
+80 silly currentTree ├── get-stdin@4.0.1
+80 silly currentTree ├─┬ getpass@0.1.6
+80 silly currentTree │ └── assert-plus@1.0.0
+80 silly currentTree ├── glob@7.1.1
+80 silly currentTree ├── graceful-fs@4.1.11
+80 silly currentTree ├── graceful-readlink@1.0.1
+80 silly currentTree ├─┬ har-validator@2.0.6
+80 silly currentTree │ └── commander@2.9.0
+80 silly currentTree ├── has-ansi@2.0.0
+80 silly currentTree ├── hawk@3.1.3
+80 silly currentTree ├── hoek@2.16.3
+80 silly currentTree ├── home-path@1.0.3
+80 silly currentTree ├── hosted-git-info@2.1.5
+80 silly currentTree ├── http-signature@1.1.1
+80 silly currentTree ├── indent-string@2.1.0
+80 silly currentTree ├── inflight@1.0.6
+80 silly currentTree ├── inherits@2.0.3
+80 silly currentTree ├── ini@1.3.4
+80 silly currentTree ├── is-arrayish@0.2.1
+80 silly currentTree ├── is-builtin-module@1.0.0
+80 silly currentTree ├── is-finite@1.0.2
+80 silly currentTree ├── is-fullwidth-code-point@1.0.0
+80 silly currentTree ├─┬ is-my-json-valid@2.15.0
+80 silly currentTree │ └── xtend@4.0.1
+80 silly currentTree ├── is-property@1.0.2
+80 silly currentTree ├── is-typedarray@1.0.0
+80 silly currentTree ├── is-utf8@0.2.1
+80 silly currentTree ├── isarray@0.0.1
+80 silly currentTree ├── isstream@0.1.2
+80 silly currentTree ├── jodid25519@1.0.2
+80 silly currentTree ├── jsbn@0.1.0
+80 silly currentTree ├── json-schema@0.2.3
+80 silly currentTree ├── json-stringify-safe@5.0.1
+80 silly currentTree ├── jsonfile@2.4.0
+80 silly currentTree ├── jsonpointer@4.0.0
+80 silly currentTree ├── jsprim@1.3.1
+80 silly currentTree ├── keypress@0.1.0
+80 silly currentTree ├── klaw@1.3.1
+80 silly currentTree ├── load-json-file@1.1.0
+80 silly currentTree ├── loud-rejection@1.6.0
+80 silly currentTree ├── map-obj@1.0.1
+80 silly currentTree ├── memoizee@0.2.6
+80 silly currentTree ├── meow@3.7.0
+80 silly currentTree ├── mime-db@1.25.0
+80 silly currentTree ├── mime-types@2.1.13
+80 silly currentTree ├── minimatch@3.0.3
+80 silly currentTree ├── minimist@1.2.0
+80 silly currentTree ├─┬ mkdirp@0.5.0
+80 silly currentTree │ └── minimist@0.0.8
+80 silly currentTree ├── ms@0.7.2
+80 silly currentTree ├── next-tick@0.1.0
+80 silly currentTree ├── nodns@0.0.1
+80 silly currentTree ├── normalize-package-data@2.3.5
+80 silly currentTree ├── nugget@2.0.1
+80 silly currentTree ├── number-is-nan@1.0.1
+80 silly currentTree ├── oauth-sign@0.8.2
+80 silly currentTree ├── object-assign@4.1.0
+80 silly currentTree ├── object-keys@0.4.0
+80 silly currentTree ├── once@1.4.0
+80 silly currentTree ├── parse-json@2.2.0
+80 silly currentTree ├── path-exists@2.1.0
+80 silly currentTree ├── path-is-absolute@1.0.1
+80 silly currentTree ├── path-type@1.1.0
+80 silly currentTree ├── pend@1.2.0
+80 silly currentTree ├── pify@2.3.0
+80 silly currentTree ├── pinkie-promise@2.0.1
+80 silly currentTree ├── pinkie@2.0.4
+80 silly currentTree ├── pretty-bytes@1.0.4
+80 silly currentTree ├── process-nextick-args@1.0.7
+80 silly currentTree ├── progress-stream@1.2.0
+80 silly currentTree ├── punycode@1.4.1
+80 silly currentTree ├── qs@6.3.0
+80 silly currentTree ├── rc@1.1.6
+80 silly currentTree ├── read-pkg-up@1.0.1
+80 silly currentTree ├── read-pkg@1.1.0
+80 silly currentTree ├── readable-stream@1.1.14
+80 silly currentTree ├── redent@1.0.0
+80 silly currentTree ├── repeating@2.0.1
+80 silly currentTree ├── request@2.79.0
+80 silly currentTree ├── rimraf@2.5.4
+80 silly currentTree ├── semver@5.3.0
+80 silly currentTree ├── signal-exit@3.0.2
+80 silly currentTree ├── single-line-log@1.1.2
+80 silly currentTree ├── sntp@1.0.9
+80 silly currentTree ├── spdx-correct@1.0.2
+80 silly currentTree ├── spdx-expression-parse@1.0.4
+80 silly currentTree ├── spdx-license-ids@1.2.2
+80 silly currentTree ├── speedometer@0.1.4
+80 silly currentTree ├─┬ sshpk@1.10.1
+80 silly currentTree │ └── assert-plus@1.0.0
+80 silly currentTree ├── string_decoder@0.10.31
+80 silly currentTree ├── string-width@1.0.2
+80 silly currentTree ├── stringstream@0.0.5
+80 silly currentTree ├── strip-ansi@3.0.1
+80 silly currentTree ├── strip-bom@2.0.0
+80 silly currentTree ├── strip-indent@1.0.1
+80 silly currentTree ├── strip-json-comments@1.0.4
+80 silly currentTree ├── sumchecker@1.3.0
+80 silly currentTree ├── supports-color@2.0.0
+80 silly currentTree ├── throttleit@0.0.2
+80 silly currentTree ├── through2@0.2.3
+80 silly currentTree ├── tough-cookie@2.3.2
+80 silly currentTree ├── trim-newlines@1.0.0
+80 silly currentTree ├── tunnel-agent@0.4.3
+80 silly currentTree ├── tweetnacl@0.14.5
+80 silly currentTree ├── typedarray@0.0.6
+80 silly currentTree ├── util-deprecate@1.0.2
+80 silly currentTree ├── uuid@3.0.1
+80 silly currentTree ├── validate-npm-package-license@3.0.1
+80 silly currentTree ├── verror@1.3.6
+80 silly currentTree ├── wrappy@1.0.2
+80 silly currentTree ├── xtend@2.1.2
+80 silly currentTree └── yauzl@2.4.1
+81 silly idealTree lucascassiano
+81 silly idealTree ├── ansi-regex@2.0.0
+81 silly idealTree ├── ansi-styles@2.2.1
+81 silly idealTree ├── array-find-index@1.0.2
+81 silly idealTree ├── asn1@0.2.3
+81 silly idealTree ├── assert-plus@0.2.0
+81 silly idealTree ├── asynckit@0.4.0
+81 silly idealTree ├── aws-sign2@0.6.0
+81 silly idealTree ├── aws4@1.5.0
+81 silly idealTree ├── balanced-match@0.4.2
+81 silly idealTree ├── bcrypt-pbkdf@1.0.0
+81 silly idealTree ├── boom@2.10.1
+81 silly idealTree ├── brace-expansion@1.1.6
+81 silly idealTree ├── builtin-modules@1.1.1
+81 silly idealTree ├── camelcase-keys@2.1.0
+81 silly idealTree ├── camelcase@2.1.1
+81 silly idealTree ├── caseless@0.11.0
+81 silly idealTree ├── chalk@1.1.3
+81 silly idealTree ├── cli-color@0.2.2
+81 silly idealTree ├── code-point-at@1.1.0
+81 silly idealTree ├── combined-stream@1.0.5
+81 silly idealTree ├── commander@1.1.1
+81 silly idealTree ├── concat-map@0.0.1
+81 silly idealTree ├─┬ concat-stream@1.5.0
+81 silly idealTree │ ├── isarray@1.0.0
+81 silly idealTree │ └── readable-stream@2.0.6
+81 silly idealTree ├── core-util-is@1.0.2
+81 silly idealTree ├── cryptiles@2.0.5
+81 silly idealTree ├── currently-unhandled@0.4.1
+81 silly idealTree ├─┬ dashdash@1.14.1
+81 silly idealTree │ └── assert-plus@1.0.0
+81 silly idealTree ├── debug@2.4.5
+81 silly idealTree ├── decamelize@1.2.0
+81 silly idealTree ├── deep-extend@0.4.1
+81 silly idealTree ├── delayed-stream@1.0.0
+81 silly idealTree ├── ecc-jsbn@0.1.1
+81 silly idealTree ├── electron-download@3.0.1
+81 silly idealTree ├── electron@1.4.12
+81 silly idealTree ├── error-ex@1.3.0
+81 silly idealTree ├── es5-ext@0.9.2
+81 silly idealTree ├── es6-promise@4.0.5
+81 silly idealTree ├── escape-string-regexp@1.0.5
+81 silly idealTree ├── event-emitter@0.2.2
+81 silly idealTree ├── extend@3.0.0
+81 silly idealTree ├─┬ extract-zip@1.5.0
+81 silly idealTree │ └── debug@0.7.4
+81 silly idealTree ├── extsprintf@1.0.2
+81 silly idealTree ├── fd-slicer@1.0.1
+81 silly idealTree ├── find-up@1.1.2
+81 silly idealTree ├── forever-agent@0.6.1
+81 silly idealTree ├── form-data@2.1.2
+81 silly idealTree ├── fs-extra@0.30.0
+81 silly idealTree ├── fs.realpath@1.0.0
+81 silly idealTree ├── generate-function@2.0.0
+81 silly idealTree ├── generate-object-property@1.2.0
+81 silly idealTree ├── get-stdin@4.0.1
+81 silly idealTree ├─┬ getpass@0.1.6
+81 silly idealTree │ └── assert-plus@1.0.0
+81 silly idealTree ├── glob@7.1.1
+81 silly idealTree ├── graceful-fs@4.1.11
+81 silly idealTree ├── graceful-readlink@1.0.1
+81 silly idealTree ├─┬ har-validator@2.0.6
+81 silly idealTree │ └── commander@2.9.0
+81 silly idealTree ├── has-ansi@2.0.0
+81 silly idealTree ├── hawk@3.1.3
+81 silly idealTree ├── hoek@2.16.3
+81 silly idealTree ├── home-path@1.0.3
+81 silly idealTree ├── hosted-git-info@2.1.5
+81 silly idealTree ├── http-signature@1.1.1
+81 silly idealTree ├── indent-string@2.1.0
+81 silly idealTree ├── inflight@1.0.6
+81 silly idealTree ├── inherits@2.0.3
+81 silly idealTree ├── ini@1.3.4
+81 silly idealTree ├── is-arrayish@0.2.1
+81 silly idealTree ├── is-builtin-module@1.0.0
+81 silly idealTree ├── is-finite@1.0.2
+81 silly idealTree ├── is-fullwidth-code-point@1.0.0
+81 silly idealTree ├─┬ is-my-json-valid@2.15.0
+81 silly idealTree │ └── xtend@4.0.1
+81 silly idealTree ├── is-property@1.0.2
+81 silly idealTree ├── is-typedarray@1.0.0
+81 silly idealTree ├── is-utf8@0.2.1
+81 silly idealTree ├── isarray@0.0.1
+81 silly idealTree ├── isstream@0.1.2
+81 silly idealTree ├── jodid25519@1.0.2
+81 silly idealTree ├── jsbn@0.1.0
+81 silly idealTree ├── json-schema@0.2.3
+81 silly idealTree ├── json-stringify-safe@5.0.1
+81 silly idealTree ├── jsonfile@2.4.0
+81 silly idealTree ├── jsonpointer@4.0.0
+81 silly idealTree ├── jsprim@1.3.1
+81 silly idealTree ├── keypress@0.1.0
+81 silly idealTree ├── klaw@1.3.1
+81 silly idealTree ├── load-json-file@1.1.0
+81 silly idealTree ├── loud-rejection@1.6.0
+81 silly idealTree ├── map-obj@1.0.1
+81 silly idealTree ├── memoizee@0.2.6
+81 silly idealTree ├── meow@3.7.0
+81 silly idealTree ├── mime-db@1.25.0
+81 silly idealTree ├── mime-types@2.1.13
+81 silly idealTree ├── minimatch@3.0.3
+81 silly idealTree ├── minimist@1.2.0
+81 silly idealTree ├─┬ mkdirp@0.5.0
+81 silly idealTree │ └── minimist@0.0.8
+81 silly idealTree ├── ms@0.7.2
+81 silly idealTree ├── next-tick@0.1.0
+81 silly idealTree ├── nodns@0.0.1
+81 silly idealTree ├── normalize-package-data@2.3.5
+81 silly idealTree ├── nugget@2.0.1
+81 silly idealTree ├── number-is-nan@1.0.1
+81 silly idealTree ├── oauth-sign@0.8.2
+81 silly idealTree ├── object-assign@4.1.0
+81 silly idealTree ├── object-keys@0.4.0
+81 silly idealTree ├── once@1.4.0
+81 silly idealTree ├── parse-json@2.2.0
+81 silly idealTree ├── path-exists@2.1.0
+81 silly idealTree ├── path-is-absolute@1.0.1
+81 silly idealTree ├── path-type@1.1.0
+81 silly idealTree ├── pend@1.2.0
+81 silly idealTree ├── pify@2.3.0
+81 silly idealTree ├── pinkie-promise@2.0.1
+81 silly idealTree ├── pinkie@2.0.4
+81 silly idealTree ├── pretty-bytes@1.0.4
+81 silly idealTree ├── process-nextick-args@1.0.7
+81 silly idealTree ├── progress-stream@1.2.0
+81 silly idealTree ├── punycode@1.4.1
+81 silly idealTree ├── qs@6.3.0
+81 silly idealTree ├── rc@1.1.6
+81 silly idealTree ├── read-pkg-up@1.0.1
+81 silly idealTree ├── read-pkg@1.1.0
+81 silly idealTree ├── readable-stream@1.1.14
+81 silly idealTree ├── redent@1.0.0
+81 silly idealTree ├── repeating@2.0.1
+81 silly idealTree ├── request@2.79.0
+81 silly idealTree ├── rimraf@2.5.4
+81 silly idealTree ├── semver@5.3.0
+81 silly idealTree ├── signal-exit@3.0.2
+81 silly idealTree ├── single-line-log@1.1.2
+81 silly idealTree ├── sntp@1.0.9
+81 silly idealTree ├── spdx-correct@1.0.2
+81 silly idealTree ├── spdx-expression-parse@1.0.4
+81 silly idealTree ├── spdx-license-ids@1.2.2
+81 silly idealTree ├── speedometer@0.1.4
+81 silly idealTree ├─┬ sshpk@1.10.1
+81 silly idealTree │ └── assert-plus@1.0.0
+81 silly idealTree ├── string_decoder@0.10.31
+81 silly idealTree ├── string-width@1.0.2
+81 silly idealTree ├── stringstream@0.0.5
+81 silly idealTree ├── strip-ansi@3.0.1
+81 silly idealTree ├── strip-bom@2.0.0
+81 silly idealTree ├── strip-indent@1.0.1
+81 silly idealTree ├── strip-json-comments@1.0.4
+81 silly idealTree ├── sumchecker@1.3.0
+81 silly idealTree ├── supports-color@2.0.0
+81 silly idealTree ├── three@0.87.1
+81 silly idealTree ├── throttleit@0.0.2
+81 silly idealTree ├── through2@0.2.3
+81 silly idealTree ├── tough-cookie@2.3.2
+81 silly idealTree ├── trim-newlines@1.0.0
+81 silly idealTree ├── tunnel-agent@0.4.3
+81 silly idealTree ├── tweetnacl@0.14.5
+81 silly idealTree ├── typedarray@0.0.6
+81 silly idealTree ├── util-deprecate@1.0.2
+81 silly idealTree ├── uuid@3.0.1
+81 silly idealTree ├── validate-npm-package-license@3.0.1
+81 silly idealTree ├── verror@1.3.6
+81 silly idealTree ├── wrappy@1.0.2
+81 silly idealTree ├── xtend@2.1.2
+81 silly idealTree └── yauzl@2.4.1
+82 silly generateActionsToTake Starting
+83 silly install generateActionsToTake
+84 warn checkPermissions Missing write access to /Users/lucascassiano/node_modules
+85 silly rollbackFailedOptional Starting
+86 silly rollbackFailedOptional Finishing
+87 silly runTopLevelLifecycles Finishing
+88 silly install printInstalled
+89 warn enoent ENOENT: no such file or directory, open '/Users/lucascassiano/package.json'
+90 verbose enoent ENOENT: no such file or directory, open '/Users/lucascassiano/package.json'
+90 verbose enoent This is most likely not a problem with npm itself
+90 verbose enoent and is related to npm not being able to find a file.
+91 warn lucascassiano No description
+92 verbose If you need help, you may report this error at:
+92 verbose     <https://github.com/npm/npm/issues>
+93 warn lucascassiano No repository field.
+94 verbose If you need help, you may report this error at:
+94 verbose     <https://github.com/npm/npm/issues>
+95 warn lucascassiano No README data
+96 verbose If you need help, you may report this error at:
+96 verbose     <https://github.com/npm/npm/issues>
+97 warn lucascassiano No license field.
+98 verbose If you need help, you may report this error at:
+98 verbose     <https://github.com/npm/npm/issues>
+99 verbose stack Error: EACCES: permission denied, access '/Users/lucascassiano/node_modules'
+99 verbose stack     at Error (native)
+100 verbose cwd /Users/lucascassiano/Documents/EtchASketch3D
+101 error Darwin 16.7.0
+102 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "--save" "three"
+103 error node v6.9.2
+104 error npm  v4.0.5
+105 error path /Users/lucascassiano/node_modules
+106 error code EACCES
+107 error errno -13
+108 error syscall access
+109 error Error: EACCES: permission denied, access '/Users/lucascassiano/node_modules'
+109 error     at Error (native)
+109 error  { Error: EACCES: permission denied, access '/Users/lucascassiano/node_modules'
+109 error     at Error (native)
+109 error   errno: -13,
+109 error   code: 'EACCES',
+109 error   syscall: 'access',
+109 error   path: '/Users/lucascassiano/node_modules' }
+110 error Please try running this command again as root/Administrator.
+111 verbose exit [ -13, true ]
