@@ -70,7 +70,7 @@ function init() {
 
     raycaster = new THREE.Raycaster();
 
-    renderer = new THREE.WebGLRenderer({ canvas: canvas });
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(width, height);
     if (FULLSCREEN)
