@@ -2,7 +2,7 @@ console.log("Basic Example - loading object");
 
 var camera, scene, renderer;
 
-var FULLSCREEN = false;
+var FULLSCREEN = true;
 var width = 800;
 var height = 600;
 if (FULLSCREEN) {
@@ -29,16 +29,21 @@ var splineArray = [];
 var lineColor = 0x00ccee;
 var active = false;
 
+var refSphere;
+var prevX = 0;
+var prevY = 0;
+var prevZ = 0;
+
 init();
 animate();
 
-$("#slider").roundSlider();
-
 function init() {
+    var canvas = document.getElementById("canvas");
+
     camera = new THREE.PerspectiveCamera(70, width / height, 1, 1000);
     camera.position.z = 12;
     scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xffffff);
+    scene.background = new THREE.Color(0xffffff);//(0x212121); 
 
     var ambient = new THREE.AmbientLight(0x444444);
     scene.add(ambient);
@@ -55,7 +60,7 @@ function init() {
     shadowtexture.wrapS = THREE.ClampToEdgeWrapping;
     shadowtexture.wrapT = THREE.ClampToEdgeWrapping;
 
-    var shadowMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000, map: shadowtexture, transparent: true, opacity: 0.25 });
+    var shadowMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000, map: shadowtexture, transparent: true, opacity: 0.25, alphaTest: 0.0, depthWrite: false });
     var shadowGeometry = new THREE.PlaneGeometry(2, 2, 1);
     var shadow = new THREE.Mesh(shadowGeometry, shadowMaterial);
     //shadow.position.y = -3;
@@ -65,10 +70,12 @@ function init() {
 
     raycaster = new THREE.Raycaster();
 
-    renderer = new THREE.WebGLRenderer();
+    renderer = new THREE.WebGLRenderer({ canvas: canvas });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(width, height);
-    document.body.appendChild(renderer.domElement);
+    if (FULLSCREEN)
+        window.addEventListener('resize', onWindowResize, false);
+    //document.body.appendChild(renderer.domElement);
 
     //renderer.domElement.addEventListener('mousemove', onDocumentMouseMove, false);
 
@@ -87,15 +94,42 @@ function init() {
     scene.add(gridHelper);
 
     CreateBufferGeometry();
-    var material2 = new THREE.MeshBasicMaterial({ color: lineColor, transparent: true, opacity: 0.8 });
-    var geometry2 = new THREE.SphereGeometry( 0.5, 12, 12 );
-    var sphere = new THREE.Mesh( geometry2, material2 );
+    var material2 = new THREE.MeshBasicMaterial({ color: lineColor, transparent: true, opacity: 0.25 });
+    var geometry2 = new THREE.SphereGeometry(0.25, 36, 36);
+    var sphere = new THREE.Mesh(geometry2, material2);
 
-    sphere.rotation.x = 0.5;
-    sphere.position.y = 0.5;
-    sphere.position.x = 0;
-    scene.add( sphere );
+    //sphere.rotation.x = 0.5;
+    //sphere.position.y = 0.5;
+    //sphere.position.x = 0;
+    scene.add(sphere);
 
+    var material3 = new THREE.MeshBasicMaterial({ color: lineColor });
+
+    var geometry3 = new THREE.SphereGeometry(0.15, 36, 36);
+    refSphere = new THREE.Mesh(geometry3, material3);
+    scene.add(refSphere);
+
+    var dir = new THREE.Vector3(1, 2, 0);
+
+    //normalize the direction vector (convert to vector of length 1)
+    dir.normalize();
+
+    var origin = new THREE.Vector3(0, 0, 0);
+    var length = 1;
+    var hex = 0xffff00;
+
+    var arrowHelper = new THREE.ArrowHelper(dir, origin, length, hex);
+    //scene.add(arrowHelper);
+
+    //helper
+    var axisHelper = new THREE.AxisHelper(2);
+    scene.add(axisHelper);
+}
+
+function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
 function CreateBufferGeometry() {
@@ -112,23 +146,19 @@ function CreateBufferGeometry() {
     geometry.setDrawRange(0, drawCount);
 
     // material
-    var material = new THREE.LineBasicMaterial({ color: lineColor, linewidth: 5, transparent: true, opacity: 0.8});
+    var material = new THREE.LineBasicMaterial({ color: lineColor, linewidth: 5, transparent: true, opacity: 0.8 });
 
     // line
     line = new THREE.Line(geometry, material);
-    
+
     scene.add(line);
 
     splineArray.push(new THREE.Vector3(0, 0.5, 0));
-    splineArray.push(new THREE.Vector3(0, 5, 0));
-
-
-
-
+    //splineArray.push(new THREE.Vector3(0, 5, 0));
 
 }
 
-function randomRange(minimum,maximum){
+function randomRange(minimum, maximum) {
     var randomnumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
     return randomnumber;
 }
@@ -200,10 +230,10 @@ function checkKey(e) {
     e = e || window.event;
     if (e.keyCode == '65') {
         // A key
-        var x=randomRange(0,10);
-        var y=randomRange(0,10);
-        var z=randomRange(0,10);
-        splineArray.push(new THREE.Vector3(x,y,z));
+        var x = randomRange(0, 10);
+        var y = randomRange(0, 10);
+        var z = randomRange(0, 10);
+        splineArray.push(new THREE.Vector3(x, y, z));
         //mainObject.geometry.verticesNeedUpdate = true;
         console.log(splineArray.length);
         //console.log("A", mainObject.geometry);
@@ -212,7 +242,7 @@ function checkKey(e) {
 
     if (e.keyCode == '37') {
         // left arrow
-        
+
 
     }
     else if (e.keyCode == '39') {
@@ -230,12 +260,18 @@ function onDocumentMouseMove(event) {
 
 }
 
-function createRandomLine(){
+function createRandomLine() {
 
-    var x=randomRange(-5,5);
-    var y=randomRange(-5,5);
-    var z=randomRange(-5,5);
-    splineArray.push(new THREE.Vector3(x,10+y,z));
+    var x = randomRange(-5, 5);
+    var y = randomRange(-5, 5);
+    var z = randomRange(-5, 5);
+    splineArray.push(new THREE.Vector3(x, 10 + y, z));
+
+}
+
+function createLine(x, y, z) {
+
+    splineArray.push(new THREE.Vector3(x, y, z));
 
 }
 
@@ -246,7 +282,7 @@ function animate() {
         requestAnimationFrame(animate);
 
     }, 1000 / 10); //forcing 30FPS
-    if(active)
+    if (active)
         createRandomLine();
 
     //Updating lines
@@ -263,6 +299,61 @@ function animate() {
 
 }
 
+function movePoint(x, y, z) {
+    var moveScale = 0.5;
 
+    refSphere.position.x += x * moveScale;
+    refSphere.position.y += y * moveScale;
+    refSphere.position.z += z * moveScale;
+
+    createLine(refSphere.position.x, refSphere.position.y, refSphere.position.z);
+
+}
+
+$("#dialX").knob({
+    'min': 0,
+    'max': 100,
+    'change': function (v) { MoveX(v) }
+});
+$("#dialY").knob({
+    'min': 0,
+    'max': 100,
+    'change': function (v) { MoveY(v) }
+});
+
+$("#dialZ").knob({
+    'min': 0,
+    'max': 100,
+    'change': function (v) { MoveZ(v) }
+});
+
+
+
+function MoveX(value) {
+    var diff = value - prevX;
+    if (diff > 0)
+        movePoint(0.1, 0, 0);
+    else
+        movePoint(-0.1, 0, 0);
+    prevX = value;
+}
+
+function MoveY(value) {
+    var diff = value - prevY;
+    if (diff > 0)
+        movePoint(0, 0.1, 0);
+    else
+        movePoint(0, -0.1, 0);
+    prevY = value;
+}
+
+function MoveZ(value) {
+    var diff = value - prevZ;
+    if (diff > 0)
+        movePoint(0, 0, 0.1);
+    else
+        movePoint(0, 0, -0.1);
+    prevZ = value;
+}
 
 

@@ -2,7 +2,7 @@
 
 <head>
     <title>Etch a Sketch3D</title>
-    
+
     <!--Style-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/roundslider.min.css">
@@ -16,17 +16,23 @@
     <!--Import for Circular Slider-->
     <script src="js/jquery.min.js"></script>
     <script src="js/roundslider.min.js"></script>
+    <script src="js/knob.js"></script>
+
 </head>
 
 <body>
-    
-  
-    <script src="js/index.js"></script>
-    <div id="slider">slider</div>
+    <canvas id="canvas"></canvas>
+    <div class="controls">
+        <input type="text" class="dial space" id="dialX">
+        <input type="text" class="dial space" id="dialY">
+        <input type="text" class="dial space" id="dialZ">
+    </div>
 
     <footer>
-        Lucas Cassiano (c) - 2017
+       <a href="http://media.mit.edu/~cassiano">Portfolio</a> - Lucas Cassiano (c) - 2017
     </footer>
+
+    <script src="js/index.js"></script>
 
 </body>
 

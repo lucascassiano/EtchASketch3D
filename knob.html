@@ -1,0 +1,28 @@
+<HTML>
+
+<HEAD>
+    <TITLE>Crunchify - jQuery Knob Example</TITLE>
+
+    <style type="text/css">
+
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://cdn.crunchify.com/wp-content/uploads/code/knob.js"></script>
+
+</HEAD>
+
+<BODY>
+    <br>
+
+    <div align="center">
+        <input type="text" class="dial"> <br><br>
+    </div>
+    <script>
+        $(".dial").knob({
+            'change': function (v) { console.log(v); }
+        });
+    </script>
+
+</BODY>
+
+</HTML>
